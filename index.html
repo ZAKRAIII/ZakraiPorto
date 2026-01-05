@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .zoom-img { transition: transform 0.3s ease; }
+        .zoom-img:hover { transform: scale(1.05); }
+        
+        /* Animasi untuk Modal */
+        #projectModal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .modal-visible { opacity: 1; visibility: visible; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-slate-900 tracking-tight">PORTFOLIO.</h1>
+            <ul class="flex space-x-6 text-sm font-medium text-slate-600">
+                <li><a href="#about" class="hover:text-blue-600 transition">Profil</a></li>
+                <li><a href="#projects" class="hover:text-blue-600 transition">Kegiatan</a></li>
+                <li><a href="#gallery" class="hover:text-blue-600 transition">Galeri</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 px-4 text-center bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8 relative inline-block">
+                <img src="pic/image_659d28.jpg" 
+                     alt="Foto Profil" 
+                     class="w-40 h-40 rounded-full mx-auto shadow-xl border-4 border-white object-cover">
+                <div class="absolute bottom-2 right-2 bg-blue-600 text-white p-2 rounded-full border-2 border-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Nama <span class="text-blue-600">Anda</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-500 font-light mb-8">
+                Instrument Technician & Certified Drone Pilot
+            </p>
+            <p class="max-w-2xl mx-auto text-slate-600 leading-relaxed mb-10">
+                Berpengalaman dalam pemeliharaan instrumen presisi industri (Gas Analyzer) dan pengoperasian drone enterprise untuk inspeksi serta pemetaan udara.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-600/30">Hubungi Saya</a>
+                <a href="#projects" class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-full font-semibold hover:bg-slate-50 transition">Lihat Karya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PROJECTS SECTION -->
+    <section id="projects" class="py-20 bg-slate-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Fokus Utama</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- KARTU 1: MAINTENANCE -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="pic/Maintenance_1.jpg" alt="Maintenance Gas Analyzer" class="w-full h-full object-cover zoom-img">
+                        <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">MAINTENANCE</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">Instrument Gas Analyzer</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                            Kegiatan troubleshooting, cleaning, dan kalibrasi rutin pada unit Gas Analyzer. Memastikan sensor bekerja optimal.
+                        </p>
+                        <!-- Tombol dengan fungsi OnClick -->
+                        <button onclick="openModal('maintenance')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
+                            Lihat Galeri & Detail <span>&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KARTU 2: PELATIHAN DRONE -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="pic/trainingInclass_1.jpg" alt="Pelatihan Drone Enterprise" class="w-full h-full object-cover zoom-img">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">TRAINING</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">Pelatihan Drone Enterprise</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                            Sesi kelas membahas fitur drone industrial, manajemen misi, dan prosedur keselamatan penerbangan.
+                        </p>
+                        <!-- Tombol dengan fungsi OnClick -->
+                        <button onclick="openModal('training')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
+                            Lihat Galeri & Detail <span>&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KARTU 3: UJI PENERBANGAN -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="pic/trainingOutdoor_1.jpg" alt="Uji Penerbangan" class="w-full h-full object-cover zoom-img">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">FLIGHT TEST</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">Uji Penerbangan Lapangan</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                            Tes stabilitas terbang (hovering), respons stick, dan pengujian sensor rintangan di area terbuka.
+                        </p>
+                        <!-- Tombol dengan fungsi OnClick -->
+                        <button onclick="openModal('outdoor')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
+                            Lihat Galeri & Detail <span>&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8">Dokumentasi Lainnya</h2>
+            <div class="columns-1 md:columns-3 gap-4 space-y-4">
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingIntrumentAnalyzer_1.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingInclass_2.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingInclass_3.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingOutdoor_2.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/bg.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/1024251511 (1).jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/TimePhoto_20241224_102854.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Tertarik Bekerjasama?</h2>
+            <p class="text-slate-400 mb-8">Saya siap membantu kebutuhan teknis perusahaan Anda.</p>
+            <a href="mailto:emailanda@gmail.com" class="inline-flex items-center gap-2 bg-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-500 transition">
+                <span>📧</span> Hubungi via Email
+            </a>
+            <div class="mt-12 border-t border-slate-800 pt-8 flex justify-center space-x-8 text-slate-500">
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+                <a href="#" class="hover:text-white transition">Instagram</a>
+                <a href="#" class="hover:text-white transition">GitHub</a>
+            </div>
+            <p class="mt-8 text-sm text-slate-600">&copy; 2024 Portofolio Pribadi.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP (Hidden by default) -->
+    <div id="projectModal" class="fixed inset-0 z-[100] modal-hidden flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 shadow-2xl flex flex-col md:flex-row">
+            
+            <!-- Close Button (Mobile) -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 md:hidden z-20">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <!-- Carousel Section (Left/Top) -->
+            <div class="w-full md:w-2/3 bg-black relative group flex items-center justify-center min-h-[300px]">
+                <img id="modalImage" src="" alt="Project Image" class="w-full h-full object-contain max-h-[60vh] md:max-h-[70vh]">
+                
+                <!-- Carousel Controls -->
+                <button onclick="prevImage()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-md transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="nextImage()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-md transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+                
+                <!-- Image Counter -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 px-3 py-1 rounded-full text-white text-xs font-mono">
+                    <span id="currentIndex">1</span> / <span id="totalIndex">3</span>
+                </div>
+            </div>
+
+            <!-- Detail Text Section (Right/Bottom) -->
+            <div class="w-full md:w-1/3 p-8 flex flex-col bg-white">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 id="modalTitle" class="text-2xl font-bold text-slate-900">Judul Project</h3>
+                    <!-- Close Button (Desktop) -->
+                    <button onclick="closeModal()" class="hidden md:block text-slate-400 hover:text-slate-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                
+                <div class="prose prose-sm text-slate-600 leading-relaxed overflow-y-auto pr-2 custom-scrollbar">
+                    <p id="modalDesc">Deskripsi detail project akan muncul di sini.</p>
+                </div>
+
+                <div class="mt-auto pt-6 border-t border-slate-100">
+                    <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Kategori</p>
+                    <span id="modalCategory" class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-bold">Teknis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DATA PROJECT
+        // Disini kita simpan daftar foto untuk setiap kategori
+        const projectsData = {
+            'maintenance': {
+                title: "Maintenance Instrument Gas Analyzer",
+                category: "MAINTENANCE",
+                desc: "Melakukan perawatan menyeluruh pada sistem Gas Analyzer (CEMS). <br><br>Kegiatan meliputi: <br>1. Pengecekan visual unit.<br>2. Pembersihan filter dan probe.<br>3. Kalibrasi span dan zero gas.<br>4. Troubleshooting error reading pada sistem.",
+                images: [
+                    "pic/Maintenance_1.jpg", 
+                    "pic/1024251511 (1).jpg",
+                    "pic/trainingIntrumentAnalyzer_1.jpg" // Menambahkan foto relevan lain
+                ]
+            },
+            'training': {
+                title: "Training Class Drone Enterprise",
+                category: "TRAINING",
+                desc: "Sesi pelatihan in-class untuk persiapan sertifikasi pilot drone. <br><br>Materi mencakup: <br>1. Regulasi penerbangan drone di Indonesia (CASR 107).<br>2. Pengenalan fitur Intelligent Flight Battery.<br>3. Perencanaan misi menggunakan software ground station.<br>4. Manajemen risiko dan safety assessment.",
+                images: [
+                    "pic/trainingInclass_1.jpg", 
+                    "pic/trainingInclass_2.jpg", 
+                    "pic/trainingInclass_3.jpg"
+                ]
+            },
+            'outdoor': {
+                title: "Uji Penerbangan Lapangan",
+                category: "FLIGHT TEST",
+                desc: "Praktek lapangan pengoperasian drone di area terbuka. <br><br>Fokus pengujian: <br>1. Kompas dan IMU calibration sebelum terbang.<br>2. Uji ketahanan sinyal transmisi.<br>3. Manuver dasar (Figure 8, POI).<br>4. Pendaratan darurat (RTH) testing.",
+                images: [
+                    "pic/trainingOutdoor_1.jpg", 
+                    "pic/trainingOutdoor_2.jpg", 
+                    "pic/TimePhoto_20241224_102854.jpg",
+                    "pic/TimePhoto_20241224_102923.jpg"
+                ]
+            }
+        };
+
+        let currentCategory = '';
+        let currentImageIndex = 0;
+
+        // BUKA MODAL
+        function openModal(categoryKey) {
+            const data = projectsData[categoryKey];
+            if(!data) return;
+
+            currentCategory = categoryKey;
+            currentImageIndex = 0; // Reset ke foto pertama
+
+            // Isi konten modal
+            document.getElementById('modalTitle').innerHTML = data.title;
+            document.getElementById('modalDesc').innerHTML = data.desc;
+            document.getElementById('modalCategory').innerText = data.category;
+            
+            // Update Gambar
+            updateImage();
+
+            // Tampilkan Modal
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('modal-hidden');
+            modal.classList.add('modal-visible');
+        }
+
+        // TUTUP MODAL
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('modal-visible');
+            modal.classList.add('modal-hidden');
+        }
+
+        // UPDATE GAMBAR CAROUSEL
+        function updateImage() {
+            const images = projectsData[currentCategory].images;
+            const imgElement = document.getElementById('modalImage');
+            
+            imgElement.src = images[currentImageIndex];
+            
+            // Update counter text (contoh: 1 / 3)
+            document.getElementById('currentIndex').innerText = currentImageIndex + 1;
+            document.getElementById('totalIndex').innerText = images.length;
+        }
+
+        // TOMBOL NEXT
+        function nextImage() {
+            const images = projectsData[currentCategory].images;
+            currentImageIndex++;
+            if (currentImageIndex >= images.length) {
+                currentImageIndex = 0; // Balik ke awal
+            }
+            updateImage();
+        }
+
+        // TOMBOL PREV
+        function prevImage() {
+            const images = projectsData[currentCategory].images;
+            currentImageIndex--;
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1; // Balik ke akhir
+            }
+            updateImage();
+        }
+
+        // TUTUP PAKE TOMBOL ESC KEYBOARD
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+            // Navigasi keyboard kiri kanan
+            if (event.key === "ArrowRight") {
+                const modal = document.getElementById('projectModal');
+                if (modal.classList.contains('modal-visible')) nextImage();
+            }
+            if (event.key === "ArrowLeft") {
+                const modal = document.getElementById('projectModal');
+                if (modal.classList.contains('modal-visible')) prevImage();
+            }
+        });
+    </script>
+
+</body>
+</html>
