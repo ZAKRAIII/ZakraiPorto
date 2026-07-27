@@ -86,10 +86,10 @@
                 <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
                 <p class="mt-4 text-slate-500 text-sm">Bidang keahlian dan kegiatan profesional yang saya tekuni</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
-                                <!-- KARTU 1: MAINTENANCE -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+
+                <!-- KARTU 1: MAINTENANCE -->
+                <div onclick="openModal('maintenance')" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card cursor-pointer">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/Maintenance_1.jpg" alt="Maintenance Gas Analyzer" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">MAINTENANCE</div>
@@ -99,13 +99,14 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Kegiatan troubleshooting, cleaning, dan kalibrasi rutin pada unit Gas Analyzer. Memastikan sensor bekerja optimal.
                         </p>
-                        <button onclick="openModal('maintenance')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri &amp; Detail <span>&rarr;</span>
-                        </button>
+                        <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-3 transition-all">
+                            Lihat Galeri &amp; Detail <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </span>
                     </div>
                 </div>
+
                 <!-- KARTU 2: PELATIHAN DRONE -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+                <div onclick="openModal('training')" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card cursor-pointer">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/trainingInclass_1.jpg" alt="Pelatihan Drone Enterprise" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">TRAINING</div>
@@ -115,13 +116,14 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Sesi kelas membahas fitur drone industrial, manajemen misi, dan prosedur keselamatan penerbangan.
                         </p>
-                        <button onclick="openModal('training')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri &amp; Detail <span>&rarr;</span>
-                        </button>
+                        <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-3 transition-all">
+                            Lihat Galeri &amp; Detail <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </span>
                     </div>
                 </div>
+
                 <!-- KARTU 3: UJI PENERBANGAN -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+                <div onclick="openModal('outdoor')" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card cursor-pointer">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/trainingOutdoor_1.jpg" alt="Uji Penerbangan" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">FLIGHT TEST</div>
@@ -131,13 +133,14 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Tes stabilitas terbang (hovering), respons stick, dan pengujian sensor rintangan di area terbuka.
                         </p>
-                        <button onclick="openModal('outdoor')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri &amp; Detail <span>&rarr;</span>
-                        </button>
+                        <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-3 transition-all">
+                            Lihat Galeri &amp; Detail <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </span>
                     </div>
                 </div>
+
                 <!-- KARTU 4: TRAINING AQMS -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+                <div onclick="openModal('aqms')" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card cursor-pointer">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/trainingIntrumentAnalyzer_1.png" alt="Training Penggunaan Instrumen AQMS" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">TRAINING</div>
@@ -147,14 +150,14 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Pelatihan penggunaan, kalibrasi, dan perawatan sistem AQMS (Air Quality Monitoring System) untuk operator lapangan dan teknisi.
                         </p>
-                        <button onclick="openModal('aqms')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri &amp; Detail <span>&rarr;</span>
-                        </button>
+                        <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-3 transition-all">
+                            Lihat Galeri &amp; Detail <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </span>
                     </div>
                 </div>
 
                 <!-- KARTU 5: PROJECT LAPANGAN (foto baru) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+                <div onclick="openModal('projectLapangan')" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card cursor-pointer">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/project.jpg" alt="Project Lapangan Drone" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">PROJECT</div>
@@ -164,16 +167,16 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Pendampingan dan demonstrasi langsung di lapangan bersama klien, meliputi pengoperasian drone dan penjelasan teknis sistem.
                         </p>
-                        <button onclick="openModal('projectLapangan')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri &amp; Detail <span>&rarr;</span>
-                        </button>
+                        <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-3 transition-all">
+                            Lihat Galeri &amp; Detail <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </span>
                     </div>
                 </div>
 
                 <!-- KARTU 6: PAMERAN & SALES ENG (foto baru) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+                <div onclick="openModal('salesPameran')" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card cursor-pointer">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="pic/salesEng.jpeg" alt="Sales Engineering & Pameran" class="w-full h-full object-cover zoom-img">
+                        <img src="pic/salesEng.jpeg" alt="Sales Engineering &amp; Pameran" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-rose-600 text-white text-xs font-bold px-3 py-1 rounded-full">SALES ENG</div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -181,9 +184,9 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Presentasi dan demonstrasi produk AQMS kepada calon klien, serta partisipasi dalam pameran industri lingkungan.
                         </p>
-                        <button onclick="openModal('salesPameran')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri &amp; Detail <span>&rarr;</span>
-                        </button>
+                        <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-3 transition-all">
+                            Lihat Galeri &amp; Detail <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                        </span>
                     </div>
                 </div>
 
