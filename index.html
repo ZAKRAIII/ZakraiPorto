@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolionya zaki</title>
+    <title>Portofolio Zaki Kamal S.</title>
+    <meta name="description" content="Portofolio profesional Zaki Kamal Saputra – Instrument Technician & Certified Drone Pilot. Berpengalaman dalam environmental monitoring, AQMS, dan survei UAV.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
@@ -14,6 +15,23 @@
         #projectModal { transition: opacity 0.3s ease, visibility 0.3s ease; }
         .modal-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         .modal-visible { opacity: 1; visibility: visible; pointer-events: auto; }
+
+        /* Nav link hover underline */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Project card lift */
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-6px); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
@@ -23,15 +41,16 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold text-slate-900 tracking-tight">PORTFOLIO.</h1>
             <ul class="flex space-x-6 text-sm font-medium text-slate-600">
-                <li><a href="#about" class="hover:text-blue-600 transition">Profil</a></li>
-                <li><a href="#projects" class="hover:text-blue-600 transition">Kegiatan</a></li>
-                <li><a href="#gallery" class="hover:text-blue-600 transition">Galeri</a></li>
+                <li><a href="#about" class="nav-link hover:text-blue-600 transition">Profil</a></li>
+                <li><a href="#fokus" class="nav-link hover:text-blue-600 transition">Fokus Utama</a></li>
+                <li><a href="#project-section" class="nav-link hover:text-blue-600 transition">Project</a></li>
+                <li><a href="#gallery" class="nav-link hover:text-blue-600 transition">Galeri</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="pt-32 pb-20 px-4 text-center bg-white">
+    <section id="about" class="pt-32 pb-20 px-4 text-center bg-white">
         <div class="max-w-4xl mx-auto">
             <div class="mb-8 relative inline-block">
                 <img src="pic/KODAK_GB200_104022.png" 
@@ -54,23 +73,23 @@
                 Saya adalah profesional di bidang environmental monitoring dan teknologi drone dengan latar belakang rekayasa sistem. Berpengalaman dalam perencanaan, instalasi, kalibrasi, dan evaluasi sistem pemantauan kualitas udara serta survei berbasis UAV, saya bekerja dengan pendekatan terstruktur, akurat, dan berbasis data.
             <div class="flex justify-center gap-4">
                 <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-600/30">Hubungi Saya</a>
-                <a href="#projects" class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-full font-semibold hover:bg-slate-50 transition">Lihat Karya</a>
+                <a href="#fokus" class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-full font-semibold hover:bg-slate-50 transition">Lihat Karya</a>
             </div>
         </div>
     </section>
 
-    <!-- MAIN PROJECTS SECTION -->
-    <section id="projects" class="py-20 bg-slate-100">
+    <!-- FOKUS UTAMA SECTION -->
+    <section id="fokus" class="py-20 bg-slate-100">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-slate-900 mb-2">Fokus Utama</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-500 text-sm">Bidang keahlian dan kegiatan profesional yang saya tekuni</p>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8">
-                
-                <!-- KARTU 1: MAINTENANCE -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+            <div class="grid md:grid-cols-3 gap-8">
+                                <!-- KARTU 1: MAINTENANCE -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/Maintenance_1.jpg" alt="Maintenance Gas Analyzer" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">MAINTENANCE</div>
@@ -80,15 +99,13 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Kegiatan troubleshooting, cleaning, dan kalibrasi rutin pada unit Gas Analyzer. Memastikan sensor bekerja optimal.
                         </p>
-                        <!-- Tombol dengan fungsi OnClick -->
                         <button onclick="openModal('maintenance')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri & Detail <span>&rarr;</span>
+                            Lihat Galeri &amp; Detail <span>&rarr;</span>
                         </button>
                     </div>
                 </div>
-
                 <!-- KARTU 2: PELATIHAN DRONE -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/trainingInclass_1.jpg" alt="Pelatihan Drone Enterprise" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">TRAINING</div>
@@ -98,15 +115,13 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Sesi kelas membahas fitur drone industrial, manajemen misi, dan prosedur keselamatan penerbangan.
                         </p>
-                        <!-- Tombol dengan fungsi OnClick -->
                         <button onclick="openModal('training')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri & Detail <span>&rarr;</span>
+                            Lihat Galeri &amp; Detail <span>&rarr;</span>
                         </button>
                     </div>
                 </div>
-
                 <!-- KARTU 3: UJI PENERBANGAN -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/trainingOutdoor_1.jpg" alt="Uji Penerbangan" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">FLIGHT TEST</div>
@@ -116,27 +131,58 @@
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Tes stabilitas terbang (hovering), respons stick, dan pengujian sensor rintangan di area terbuka.
                         </p>
-                        <!-- Tombol dengan fungsi OnClick -->
                         <button onclick="openModal('outdoor')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri & Detail <span>&rarr;</span>
+                            Lihat Galeri &amp; Detail <span>&rarr;</span>
                         </button>
                     </div>
                 </div>
-
                 <!-- KARTU 4: TRAINING AQMS -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
                     <div class="h-64 overflow-hidden relative">
                         <img src="pic/trainingIntrumentAnalyzer_1.png" alt="Training Penggunaan Instrumen AQMS" class="w-full h-full object-cover zoom-img">
                         <div class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">TRAINING</div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">Training Penggunaan Instrumen AQMS</h3>
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">Training Instrumen AQMS</h3>
                         <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
                             Pelatihan penggunaan, kalibrasi, dan perawatan sistem AQMS (Air Quality Monitoring System) untuk operator lapangan dan teknisi.
                         </p>
-                        <!-- Tombol dengan fungsi OnClick -->
                         <button onclick="openModal('aqms')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                            Lihat Galeri & Detail <span>&rarr;</span>
+                            Lihat Galeri &amp; Detail <span>&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KARTU 5: PROJECT LAPANGAN (foto baru) -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="pic/project.jpg" alt="Project Lapangan Drone" class="w-full h-full object-cover zoom-img">
+                        <div class="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">PROJECT</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">Project Lapangan Drone</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                            Pendampingan dan demonstrasi langsung di lapangan bersama klien, meliputi pengoperasian drone dan penjelasan teknis sistem.
+                        </p>
+                        <button onclick="openModal('projectLapangan')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
+                            Lihat Galeri &amp; Detail <span>&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KARTU 6: PAMERAN & SALES ENG (foto baru) -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col h-full project-card">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="pic/salesEng.jpeg" alt="Sales Engineering & Pameran" class="w-full h-full object-cover zoom-img">
+                        <div class="absolute top-4 left-4 bg-rose-600 text-white text-xs font-bold px-3 py-1 rounded-full">SALES ENG</div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">Sales Engineering &amp; Pameran</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                            Presentasi dan demonstrasi produk AQMS kepada calon klien, serta partisipasi dalam pameran industri lingkungan.
+                        </p>
+                        <button onclick="openModal('salesPameran')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
+                            Lihat Galeri &amp; Detail <span>&rarr;</span>
                         </button>
                     </div>
                 </div>
@@ -145,17 +191,97 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-20 bg-white">
+    <!-- PROJECT SECTION (tab baru) -->
+    <section id="project-section" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-slate-900 mb-8">Dokumentasi Lainnya</h2>
-            <div class="columns-1 md:columns-3 gap-4 space-y-4">
-                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingIntrumentAnalyzer_1.png" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
-                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingInclass_2.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
-                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingInclass_3.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
-                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingOutdoor_2.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
-                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/bg.jpg" class="w-full hover:scale-105 transition duration-500" alt="Foto"></div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Project</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-500 text-sm">Dokumentasi kegiatan lapangan dan kolaborasi profesional</p>
+            </div>
+
+            <!-- Grid Bento foto-foto baru -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <!-- Besar: project.jpg -->
+                <div class="md:col-span-2 rounded-2xl overflow-hidden group relative shadow-sm hover:shadow-xl transition duration-300" style="min-height: 420px;">
+                    <img src="pic/project.jpg" alt="Project Lapangan Drone" class="w-full h-full object-cover zoom-img" style="min-height: 420px;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">Project Lapangan</span>
+                            <p class="text-white font-bold text-lg mt-1">Demonstrasi Operasional Drone</p>
+                            <p class="text-white/70 text-sm mt-1">Pendampingan teknis langsung di lapangan bersama klien</p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- principalVisit.jpg -->
+                <div class="rounded-2xl overflow-hidden group relative shadow-sm hover:shadow-xl transition duration-300" style="min-height: 200px;">
+                    <img src="pic/principalVisit.jpg" alt="Principal Visit" class="w-full h-full object-cover zoom-img" style="min-height: 200px;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
+                        <div>
+                            <span class="text-xs font-bold text-sky-300 uppercase tracking-wider">Business</span>
+                            <p class="text-white font-bold text-base mt-1">Kunjungan Principal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- salesEng.jpeg -->
+                <div class="rounded-2xl overflow-hidden group relative shadow-sm hover:shadow-xl transition duration-300" style="min-height: 200px;">
+                    <img src="pic/salesEng.jpeg" alt="Sales Engineering" class="w-full h-full object-cover zoom-img" style="min-height: 200px;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
+                        <div>
+                            <span class="text-xs font-bold text-rose-300 uppercase tracking-wider">Sales Eng</span>
+                            <p class="text-white font-bold text-base mt-1">Demonstrasi Produk AQMS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- fotoPameran1.jpg -->
+                <div class="md:col-span-2 rounded-2xl overflow-hidden group relative shadow-sm hover:shadow-xl transition duration-300" style="min-height: 260px;">
+                    <img src="pic/fotoPameran1.jpg" alt="Pameran Industri GreenTeams" class="w-full h-full object-cover zoom-img" style="min-height: 260px;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs font-bold text-yellow-300 uppercase tracking-wider">Pameran</span>
+                            <p class="text-white font-bold text-lg mt-1">Pameran Industri GreenTeams</p>
+                            <p class="text-white/70 text-sm mt-1">Partisipasi tim dalam pameran lingkungan dan monitoring</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- samplingOnsite.jpeg -->
+                <div class="rounded-2xl overflow-hidden group relative shadow-sm hover:shadow-xl transition duration-300" style="min-height: 260px;">
+                    <img src="pic/samplingOnsite.jpeg" alt="Sampling Onsite" class="w-full h-full object-cover zoom-img" style="min-height: 260px;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
+                        <div>
+                            <span class="text-xs font-bold text-orange-300 uppercase tracking-wider">Field Work</span>
+                            <p class="text-white font-bold text-base mt-1">Sampling Onsite</p>
+                            <p class="text-white/70 text-sm mt-1">Pengukuran kualitas udara di Jakarta Timur</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-20 bg-slate-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Galeri</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-500 text-sm">Dokumentasi kegiatan lainnya</p>
+            </div>
+            <div class="columns-1 md:columns-3 gap-4 space-y-4">
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingIntrumentAnalyzer_1.png" class="w-full hover:scale-105 transition duration-500" alt="Training Instrumen Analyzer"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingInclass_2.jpg" class="w-full hover:scale-105 transition duration-500" alt="Training Kelas 2"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingInclass_3.jpg" class="w-full hover:scale-105 transition duration-500" alt="Training Kelas 3"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/trainingOutdoor_2.jpg" class="w-full hover:scale-105 transition duration-500" alt="Training Outdoor 2"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/drone_1.jpeg" class="w-full hover:scale-105 transition duration-500" alt="Drone 1"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/drone_2.jpeg" class="w-full hover:scale-105 transition duration-500" alt="Drone 2"></div>
+                <div class="break-inside-avoid rounded-xl overflow-hidden"><img src="pic/bg.jpg" class="w-full hover:scale-105 transition duration-500" alt="Background"></div>
+            </div>
         </div>
     </section>
 
@@ -239,8 +365,9 @@
                 category: "MAINTENANCE",
                 desc: "Melakukan perawatan menyeluruh pada sistem Gas Analyzer (CEMS). <br><br>Kegiatan meliputi: <br>1. Pengecekan visual unit.<br>2. Pembersihan filter dan probe.<br>3. Kalibrasi span dan zero gas.<br>4. Troubleshooting error reading pada sistem.",
                 images: [
-                    "pic/Maintenance_1.jpg", 
-                    "pic/trainingIntrumentAnalyzer_1.png" // Menambahkan foto relevan lain
+                    "pic/Maintenance_1.jpg",
+                    "pic/samplingOnsite.jpeg",
+                    "pic/trainingIntrumentAnalyzer_1.png"
                 ]
             },
             'training': {
@@ -248,8 +375,8 @@
                 category: "TRAINING",
                 desc: "Sesi pelatihan in-class untuk persiapan sertifikasi pilot drone. <br><br>Materi mencakup: <br>1. Regulasi penerbangan drone di Indonesia (CASR 107).<br>2. Pengenalan fitur Intelligent Flight Battery.<br>3. Perencanaan misi menggunakan software ground station.<br>4. Manajemen risiko dan safety assessment.",
                 images: [
-                    "pic/trainingInclass_1.jpg", 
-                    "pic/trainingInclass_2.jpg", 
+                    "pic/trainingInclass_1.jpg",
+                    "pic/trainingInclass_2.jpg",
                     "pic/trainingInclass_3.jpg"
                 ]
             },
@@ -258,8 +385,8 @@
                 category: "FLIGHT TEST",
                 desc: "Praktek lapangan pengoperasian drone di area terbuka. <br><br>Fokus pengujian: <br>1. Kompas dan IMU calibration sebelum terbang.<br>2. Uji ketahanan sinyal transmisi.<br>3. Manuver dasar (Figure 8, POI).<br>4. Pendaratan darurat (RTH) testing.",
                 images: [
-                    "pic/trainingOutdoor_1.jpg", 
-                    "pic/trainingOutdoor_2.jpg", 
+                    "pic/trainingOutdoor_1.jpg",
+                    "pic/trainingOutdoor_2.jpg",
                     "pic/drone_1.jpeg",
                     "pic/drone_2.jpeg"
                 ]
@@ -272,6 +399,27 @@
                     "pic/trainingIntrumentAnalyzer_1.png",
                     "pic/Maintenance_1.jpg",
                     "pic/samplingOnsite.jpeg"
+                ]
+            },
+            'projectLapangan': {
+                title: "Project Lapangan Drone",
+                category: "PROJECT",
+                desc: "Pendampingan dan demonstrasi langsung operasional drone di lapangan bersama klien industri. <br><br>Kegiatan: <br>1. Briefing teknis dan safety sebelum penerbangan.<br>2. Demonstrasi pengoperasian remote control drone.<br>3. Penjelasan fitur obstacle avoidance dan return-to-home.<br>4. Evaluasi hasil misi bersama tim klien.",
+                images: [
+                    "pic/project.jpg",
+                    "pic/drone_1.jpeg",
+                    "pic/drone_2.jpeg",
+                    "pic/trainingOutdoor_1.jpg"
+                ]
+            },
+            'salesPameran': {
+                title: "Sales Engineering & Pameran Industri",
+                category: "SALES ENG",
+                desc: "Keterlibatan dalam kegiatan sales engineering dan pameran industri lingkungan. <br><br>Kegiatan: <br>1. Presentasi dan demo produk AQMS kepada calon klien.<br>2. Partisipasi pameran GreenTeams di event industri.<br>3. Kunjungan principal internasional ke kantor.<br>4. Konsultasi teknis kebutuhan monitoring klien.",
+                images: [
+                    "pic/salesEng.jpeg",
+                    "pic/fotoPameran1.jpg",
+                    "pic/principalVisit.jpg"
                 ]
             }
         };
